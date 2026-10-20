@@ -7,4 +7,4 @@
 - [企业管理后台](./admin.html)
 - [碳云工作台集成演示](./saas-agent.html)
 
-GitHub Pages 可设置为从 main 分支的根目录发布。
+GitHub Pages 从 gh-pages 分支的根目录发布。购买流程仅供演示。
