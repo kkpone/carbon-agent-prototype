@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carbon Agent 企业版 · 购买配置</title>
+  <link rel="stylesheet" href="enterprise-purchase.css">
+  <script src="enterprise-purchase.js" defer></script>
+</head>
+<body>
+  <header class="checkout-header"><a class="checkout-brand" href="agent-store.html?modal=open"><span>✳</span><strong>Carbon Agent</strong></a><div class="header-divider"></div><span class="header-title">企业版购买配置</span><a class="back-link" href="agent-store.html?modal=open">← 返回套餐</a></header>
+  <div class="demo-banner"><strong>演示配置</strong><span>页面按 ¥88/人/月展示价格。支付流程尚未接入，不会创建订单或扣款。</span></div>
+  <div class="checkout-container">
+    <div class="checkout-title"><span class="eyebrow">ENTERPRISE CHECKOUT</span><h1>配置您的企业版</h1><p>按团队规模选择席位，提交前可随时修改。</p></div>
+    <div class="checkout-layout">
+      <main class="checkout-main">
+        <section class="checkout-section"><div class="section-heading"><span class="section-number">01</span><div><h2>购买须知</h2><p>了解企业版的使用与开通方式</p></div></div><div class="section-content"><div class="notice-grid"><div><span class="notice-icon">▤</span><b>统一管理</b><p>企业管理员集中管理成员、席位和积分。</p></div><div><span class="notice-icon">✦</span><b>共享积分</b><p>团队共享企业积分池，支持项目能力使用。</p></div><div><span class="notice-icon">◇</span><b>正式开通</b><p>支付和订单服务接入后，可完成正式购买。</p></div></div></div></section>
+
+        <section class="checkout-section"><div class="section-heading"><span class="section-number">02</span><div><h2>选择套餐</h2><p>Carbon Agent Enterprise</p></div></div><div class="section-content"><div class="selected-plan"><div class="selected-plan-top"><div><span class="eyebrow">FOR ORGANIZATIONS</span><h3>企业版</h3><p>面向需要跨成员协作与集中资源管理的组织</p></div><span class="selected-badge">已选择</span></div><div class="selected-plan-price"><strong>¥88</strong><span>/ 人 / 月</span><small>1 人坐席起购</small></div><div class="selected-features"><span>✓ 全流程碳核算与报告</span><span>✓ 团队成员及席位管理</span><span>✓ 企业积分共享池</span><span>✓ 管理后台与权限配置</span></div></div><p class="fine-print">企业版具体权益、基础积分与服务承诺以正式套餐说明为准。</p></div></section>
+
+        <section class="checkout-section"><div class="section-heading"><span class="section-number">03</span><div><h2>配置订阅</h2><p>选择席位数量与购买时长</p></div></div><div class="section-content form-stack"><div class="form-row"><div class="form-label"><b>购买席位数量</b><small>每位需要使用企业版的成员占用 1 个席位</small></div><div class="stepper-field"><div class="stepper"><button id="seat-minus" type="button" aria-label="减少一个席位">−</button><input id="seat-count" type="number" min="1" max="10000" value="1" aria-label="购买席位数量"><button id="seat-plus" type="button" aria-label="增加一个席位">+</button></div><span class="stepper-unit">席</span></div></div><div class="form-row"><div class="form-label"><b>购买时长</b><small>按月购买，至少 1 个月</small></div><div class="stepper-field"><div class="stepper"><button id="month-minus" type="button" aria-label="减少一个购买月">−</button><input id="month-count" type="number" min="1" max="36" value="2" aria-label="购买时长（月）"><button id="month-plus" type="button" aria-label="增加一个购买月">+</button></div><span class="stepper-unit">月</span></div></div></div></section>
+
+        <section class="checkout-section"><div class="section-heading"><span class="section-number">04</span><div><h2>设置企业管理员</h2><p>用于后续开通沟通与管理权限确认</p></div></div><div class="section-content form-stack"><label class="input-row"><span><b>管理员姓名</b><small>购买后拟任超级管理员</small></span><input id="admin-name" type="text" autocomplete="name" placeholder="请输入姓名" required></label><label class="input-row"><span><b>手机号</b><small>正式下单时需短信验证</small></span><input id="admin-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="请输入 11 位手机号" maxlength="11" required></label><div class="form-hint">演示页面不发送验证码；正式购买时需验证手机号并确认管理员身份。</div></div></section>
+
+        <section class="checkout-section"><div class="section-heading"><span class="section-number">05</span><div><h2>企业信息</h2><p>用于确定订阅主体</p></div></div><div class="section-content form-stack"><label class="input-row"><span><b>企业名称</b><small>请填写完整名称</small></span><input id="company-name" type="text" autocomplete="organization" placeholder="请输入企业名称" required></label></div></section>
+
+      </main>
+
+      <aside class="summary-column"><div class="summary-card"><div class="summary-label">ORDER SUMMARY</div><h2>配置摘要</h2><div class="summary-divider"></div><div class="summary-row"><span>订阅套餐</span><strong>Carbon Agent 企业版</strong></div><div class="summary-row"><span>席位单价</span><strong>¥88 / 人 / 月</strong></div><div class="summary-row"><span>席位数量</span><strong id="summary-seats">1 席</strong></div><div class="summary-row"><span>购买时长</span><strong id="summary-months">2 个月</strong></div><div class="summary-row"><span>每月费用</span><strong id="summary-monthly">¥88</strong></div><div class="summary-divider"></div><div class="summary-price"><span>配置总价</span><strong id="summary-total">¥176</strong></div><p class="summary-note">按 ¥88 × 席位数量 × 购买月数计算。此页尚未接入订单或支付。</p><label class="summary-agree"><input id="acknowledge" type="checkbox"><span>我已了解当前为演示配置，不会生成真实订单</span></label><button id="confirm-config" class="confirm-button" type="button">确认购买配置</button><p id="form-error" class="form-error" role="alert" hidden></p></div><div class="summary-support">需要协助？请联系 Carbon Agent 商务团队。</div></aside>
+    </div>
+  </div>
+  <div id="confirmation" class="confirmation-overlay" hidden><div class="confirmation-dialog" role="dialog" aria-modal="true" aria-labelledby="confirmation-title"><span class="confirmation-icon">✓</span><h2 id="confirmation-title">支付成功</h2><div class="confirmation-actions"><a id="management-link" class="confirmation-primary" href="index.html">进入管理后台 <span aria-hidden="true">↗</span></a><a id="confirmation-return" class="confirmation-secondary" href="agent-store.html">返回Carbon Agent</a></div></div></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>碳云工作台 · Carbon Agent 集成原型</title>
+  <link rel="stylesheet" href="saas-agent.css">
+  <script src="carbon-agent-widget.js" defer></script>
+</head>
+<body>
+  <div class="saas-shell">
+    <aside class="saas-sidebar">
+      <div class="saas-brand"><span class="saas-brand-mark" aria-hidden="true">∞</span><strong>碳云</strong></div>
+      <nav aria-label="碳云导航">
+        <a class="active" href="#workbench"><span>▣</span> 工作台</a>
+        <a href="#products"><span>◌</span> 产品碳足迹 <b>⌄</b></a>
+        <a href="#enterprise"><span>▤</span> 企业碳核算 <b>⌄</b></a>
+        <a href="#cbam"><span>◎</span> CBAM <b>⌄</b></a>
+        <a href="#supply"><span>♧</span> 供应链碳管理 <b>⌄</b></a>
+        <a href="#factors"><span>▦</span> 因子库</a>
+        <a href="#environment"><span>♧</span> 产品环境足迹 <b>⌄</b></a>
+        <a href="#account"><span>◈</span> 碳账户 <b>⌄</b></a>
+        <a href="#lca"><span>♧</span> 产品环境足迹-LCA <b>⌄</b></a>
+        <a href="#esg"><span>◇</span> ESG <b>⌄</b></a>
+        <a href="#verify"><span>▧</span> 核查及认证服务</a>
+        <a href="#organization"><span>▦</span> 组织管理 <b>⌄</b></a>
+      </nav>
+      <div class="saas-sidebar-bottom"><div>ⓘ　帮助</div><div>♧　通知 <i></i></div><div>●　199****1659</div></div>
+    </aside>
+    <div class="saas-main">
+      <header class="saas-topbar"><span>工作台</span><span class="saas-account">♙　碳阻迹演示账号</span></header>
+      <main id="workbench" class="saas-content">
+        <section class="saas-banner"><div class="saas-banner-icon">✳</div><div><div><small>全新</small><strong>Carbon Agent，让 AI 帮你完成碳核算</strong></div><p>拆解排放源、匹配排放因子、生成核算结果，把复杂工作交给 Agent。</p></div><button type="button" id="banner-open-agent">立即体验　›</button></section>
+        <section class="saas-section"><h2>常用功能</h2><div class="saas-shortcuts"><div>▤　 企业碳核算</div><div>◌　 产品碳足迹</div><div>♧　 供应链碳管理</div><div>▦　 碳排放因子库</div></div></section>
+        <section class="saas-section saas-overview"><div class="saas-overview-heading"><h2>数据概览</h2><button type="button">产品碳足迹　⌄</button></div><div class="saas-stat-grid"><article class="saas-stat blue"><span>已核算产品数　ⓘ</span><strong>85</strong><span class="saas-spark bars">▏▕▏▕</span></article><article class="saas-stat green"><span>已认证产品数　ⓘ</span><strong>3</strong><span class="saas-spark">⌁⌁⌃⌁</span></article><article class="saas-stat cream"><span>本月新增模型</span><strong>12</strong><span class="saas-spark">↗</span></article></div></section>
+        <section class="saas-report"><div class="saas-report-head"><h3>氧化锌电阻片　⌄</h3><p>功能单位：1片氧化锌电阻片　　 核算类型：快速核算</p></div><div class="saas-report-body"><div><small>◉　总排放量　 (kgCO₂e)</small><strong>0.146128</strong><div class="saas-chart-line"><svg viewBox="0 0 500 180" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 L20 96 L40 81 L60 101 L80 64 L105 98 L130 132 L155 132 L175 115 L195 132 L215 105 L235 126 L260 112 L280 118 L305 128 L325 110 L350 108 L370 78 L390 78 L405 44 L425 53 L445 50 L465 70 L480 50 L500 51"/></svg></div></div><div class="saas-bars"><small>按生命周期分布</small><p>原材料获取 <i style="width:68%"></i></p><p>生产制造 <i style="width:30%"></i></p><p>分销和储存 <i style="width:4%"></i></p></div></div></section>
+      </main>
+    </div>
+  </div>
+  <div data-carbon-agent-widget data-open="true" data-points="3375"></div>
+  <script>document.getElementById('banner-open-agent').addEventListener('click', function () { document.querySelector('[data-carbon-agent-widget]').dispatchEvent(new CustomEvent('carbon-agent:open')); });</script>
+</body>
+</html>

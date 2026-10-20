@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carbon Agent · 套餐订阅</title>
+  <link rel="stylesheet" href="agent-store.css?v=20261016-avatar">
+  <script src="agent-store.js" defer></script>
+</head>
+<body class="store-page">
+  <div class="agent-shell">
+    <aside class="agent-nav">
+      <div class="agent-brand"><span class="brand-symbol">✳</span><strong>Carbon Agent</strong><span class="sidebar-collapse">◫</span></div>
+      <div class="agent-menu"><div class="menu-item selected">▣ <span>新对话</span></div><div class="menu-item">◌ <span>产品碳足迹</span></div><div class="menu-sub">核算管理</div><div class="menu-item">▱ <span>企业碳核算</span></div><div class="menu-sub">核算管理</div><div class="menu-item">◎ <span>CBAM</span></div><div class="menu-sub">文件管理</div><p>项目</p><div id="personal-projects" class="space-projects"><div class="menu-item">▢ <span>我的产品碳足迹</span></div><div class="menu-item">▢ <span>碳核算草稿</span></div></div><div id="enterprise-projects" class="space-projects" hidden><div class="menu-item">▢ <span>2025年碳阻迹企业项目</span></div><div class="menu-item">▢ <span>供应链碳足迹核算</span></div></div><p>历史对话</p><div class="menu-history">2025年最新的 IPCC 电力因子</div><div class="menu-history">请用不同排放因子计算…</div></div>
+      <div class="agent-nav-bottom"><button id="upgrade-trigger" class="upgrade-trigger" type="button" aria-haspopup="dialog">✦ <span id="points-balance">535</span><b id="upgrade-label">升级</b></button><button id="account-trigger" class="agent-profile" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu"><span class="profile-avatar">林</span><span class="profile-copy"><b id="account-name">我的</b><small id="account-plan">个人版</small></span><span class="profile-chevron" aria-hidden="true">›</span></button><div id="account-menu" class="account-menu" role="menu" aria-label="账号菜单" hidden><div class="account-menu-head"><span class="menu-avatar">林</span><span><b id="menu-account-name">我的</b><small>138****0000</small></span></div><div class="account-menu-divider"></div><button id="menu-guide" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">♧</span>新手引导</button><button id="menu-manual" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">▤</span>操作手册</button><button id="menu-support" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">♧</span>咨询客服</button><button id="menu-feedback" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">✎</span>问题反馈</button><button id="menu-settings" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">♙</span>个人设置</button><button id="menu-language" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">◎</span>Language<span class="switch-arrow" aria-hidden="true">›</span></button><button id="menu-notifications" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">♧</span>消息通知</button><div class="account-menu-divider bottom-divider"></div><button id="switch-account" class="account-menu-action" type="button" role="menuitem" aria-haspopup="menu" aria-expanded="false" aria-controls="space-submenu"><span class="account-icon" aria-hidden="true">⇄</span><span>切换企业账号</span><span class="switch-arrow" aria-hidden="true">›</span></button><button id="menu-logout" class="account-menu-action" type="button" role="menuitem"><span class="account-icon" aria-hidden="true">⇥</span>退出登录</button><div id="space-submenu" class="space-submenu" role="menu" aria-label="选择账号空间" hidden><div class="space-submenu-title">选择账号空间</div><button id="space-personal" class="space-option" type="button" role="menuitemradio" aria-checked="true"><span class="space-option-avatar personal-avatar">我</span><span><b>个人空间</b><small>我的个人账号</small></span><span class="space-check" aria-hidden="true">✓</span></button><button id="space-qingyu" class="space-option" type="button" role="menuitemradio" aria-checked="false"><span class="space-option-avatar enterprise-avatar">青</span><span><b>青屿科技</b><small>企业账号</small></span><span class="space-check" aria-hidden="true">✓</span></button></div></div></div>
+    </aside>
+    <main class="agent-workspace"><div class="agent-greeting"><span class="brand-symbol">✳</span><div id="workspace-label" class="workspace-label">个人空间</div><h1>今天想探索什么？</h1><p>从碳数据到行动方案，让专业工作更轻松。</p></div></main>
+  </div>
+
+  <div class="store-overlay" id="store-overlay" hidden>
+    <section class="store-dialog" role="dialog" aria-modal="true" aria-labelledby="store-title">
+      <nav class="store-side" aria-label="商城导航">
+        <span class="store-side-label">商城</span>
+        <div class="store-side-active">♧　套餐订阅</div>
+        <div>ϟ　积分充值</div>
+        <div>♧　邀请好友</div>
+        <span class="store-side-label section-gap">账单</span>
+        <div>▤　订单管理</div>
+        <div>▣　发票管理</div>
+        <div>▤　积分记录</div>
+        <span class="store-side-label section-gap">设置</span>
+        <div>♙　个人设置</div>
+        <div>⚿　API Key 管理</div>
+        <div>◇　授权管理</div>
+      </nav>
+      <div class="store-content">
+        <button id="store-close" class="dialog-close" type="button" aria-label="关闭套餐弹窗">×</button>
+        <div class="store-heading"><span class="eyebrow">CARBON AGENT PLANS</span><h2 id="store-title">升级您的套餐</h2><p>选择适合当前工作方式的版本</p></div>
+        <div class="plan-tabs" role="tablist" aria-label="套餐类型">
+          <button id="tab-personal" class="plan-tab active" role="tab" aria-selected="true" aria-controls="panel-personal" type="button">个人版</button>
+          <button id="tab-enterprise" class="plan-tab" role="tab" aria-selected="false" aria-controls="panel-enterprise" type="button">企业版</button>
+        </div>
+        <div id="panel-personal" class="plan-panel" role="tabpanel" aria-labelledby="tab-personal">
+          <div class="personal-grid">
+            <article class="plan-card trial"><span class="card-kicker">FREE</span><h3>体验版</h3><p class="plan-audience">适合初次体验</p><div class="plan-price"><small>¥</small>0</div><button class="plan-action disabled" type="button" disabled>当前套餐</button><div class="point-banner">✦　每日 100 积分，当日有效</div><div class="plan-allowance">最多约 <b>1 份专业碳足迹报告</b></div><ul><li>碳知识问答</li><li>资讯查询</li><li>碳排放估算</li><li>有限的建模及报告功能</li></ul></article>
+            <article class="plan-card personal"><span class="card-kicker">FOR INDIVIDUALS</span><h3>个人版</h3><p class="plan-audience">适合个人顾问、小企业、重度试用</p><div class="plan-price"><small>¥</small>88<span>/ 月</span></div><button id="personal-buy" class="plan-action green" type="button">升级套餐</button><div class="point-banner">✦　每月 1000 积分，当月有效</div><div class="plan-allowance">最多约 <b>10 份专业碳足迹报告</b></div><ul><li>碳知识问答与资讯查询</li><li>碳排放估算</li><li>高级碳排放因子使用</li><li>全流程建模及报告功能</li></ul></article>
+          </div>
+        </div>
+        <div id="panel-enterprise" class="plan-panel" role="tabpanel" aria-labelledby="tab-enterprise" hidden>
+          <div class="enterprise-intro"><div><span class="enterprise-pill">面向组织协作</span><h3>为整个团队配置 Carbon Agent</h3><p>将成员、碳核算项目与积分资源汇集到同一个工作空间。</p></div><div class="enterprise-intro-mark">✳</div></div>
+          <article class="enterprise-plan"><div class="enterprise-plan-main"><span class="card-kicker">CARBON AGENT ENTERPRISE</span><h3>企业版</h3><p>适合需要团队协作、集中管理与灵活配置资源的企业。</p><div class="enterprise-price">¥88 <span>/ 人 / 月</span></div><p class="enterprise-minimum">1 人坐席起购</p><a class="plan-action dark enterprise-buy" href="enterprise-purchase.html" target="_blank" rel="noopener">立即购买 <span aria-hidden="true">↗</span></a></div><div class="enterprise-features"><strong>包含个人版全部能力，另有</strong><ul><li>团队成员与席位管理</li><li>企业共享积分池与用量管理</li><li>多项目协作与统一资产管理</li><li>企业管理后台及权限配置</li></ul></div></article>
+          <p class="enterprise-footnote">点击“立即购买”将在新页面打开企业版购买配置。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="store-toast" id="store-toast" role="status" aria-live="polite"></div>
+</body>
+</html>
