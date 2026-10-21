@@ -42,6 +42,12 @@ def main() -> None:
     assert content.count(old) == 1, "Management link must be updated for public preview"
     checkout.write_text(content.replace(old, old.replace('index.html', 'admin.html')), encoding="utf-8")
 
+    store = OUTPUT / "agent-store.html"
+    content = store.read_text(encoding="utf-8")
+    old = 'id="enterprise-admin-link" class="account-menu-action enterprise-admin-link" role="menuitem" href="index.html"'
+    assert content.count(old) == 1, "Enterprise admin link must be updated for public preview"
+    store.write_text(content.replace(old, old.replace('index.html', 'admin.html')), encoding="utf-8")
+
     (OUTPUT / "index.html").write_text(
         '<!doctype html>\n<html lang="zh-CN">\n<head>\n'
         '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
@@ -59,7 +65,7 @@ def main() -> None:
         "- [企业版购买配置](./enterprise-purchase.html)\n"
         "- [企业管理后台](./admin.html)\n"
         "- [碳云工作台集成演示](./saas-agent.html)\n\n"
-        "GitHub Pages 可设置为从 main 分支的根目录发布。\n",
+        "GitHub Pages 从 gh-pages 分支的根目录发布。购买流程仅供演示。\n",
         encoding="utf-8",
     )
     print(f"Built {len(ASSETS) + 4} public preview files in {OUTPUT}")

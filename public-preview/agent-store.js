@@ -5,6 +5,7 @@ const tabs = [document.getElementById('tab-personal'), document.getElementById('
 const panels = [document.getElementById('panel-personal'), document.getElementById('panel-enterprise')];
 const accountTrigger = document.getElementById('account-trigger');
 const accountMenu = document.getElementById('account-menu');
+const enterpriseAdminLink = document.getElementById('enterprise-admin-link');
 const switchAccount = document.getElementById('switch-account');
 const spaceSubmenu = document.getElementById('space-submenu');
 const personalSpace = document.getElementById('space-personal');
@@ -37,6 +38,7 @@ function renderSpace() {
   document.getElementById('upgrade-label').textContent = enterprise ? '套餐' : '升级';
   document.getElementById('personal-projects').hidden = enterprise;
   document.getElementById('enterprise-projects').hidden = !enterprise;
+  enterpriseAdminLink.hidden = !enterprise;
 }
 
 function closeAccountMenu(focusTrigger = false) {
@@ -71,6 +73,7 @@ function selectSpace(nextSpace) {
 
 personalSpace.addEventListener('click', () => selectSpace('personal'));
 qingyuSpace.addEventListener('click', () => selectSpace('enterprise'));
+enterpriseAdminLink.addEventListener('click', () => closeAccountMenu());
 for (const id of ['menu-guide','menu-manual','menu-support','menu-feedback','menu-settings','menu-language','menu-notifications','menu-logout']) {
   document.getElementById(id).addEventListener('click', () => {
     closeAccountMenu(true);

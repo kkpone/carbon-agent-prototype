@@ -11,7 +11,10 @@ assert.match(storeHtml, /href="enterprise-purchase.html" target="_blank" rel="no
 assert.match(storeHtml, /¥88 <span>\/ 人 \/ 月<\/span>/);
 assert.match(storeHtml, /1 人坐席起购/);
 assert.match(storeHtml, /id="account-trigger"[^>]*aria-haspopup="menu"/);
-for (const label of ['新手引导','操作手册','咨询客服','问题反馈','个人设置','Language','消息通知','切换企业账号','退出登录']) assert.ok(storeHtml.includes(label), `${label} appears in account menu`);
+for (const label of ['新手引导','操作手册','咨询客服','问题反馈','个人设置','Language','消息通知','企业管理后台','切换企业账号','退出登录']) assert.ok(storeHtml.includes(label), `${label} appears in account menu`);
+assert.ok(storeHtml.indexOf('消息通知') < storeHtml.indexOf('企业管理后台'));
+assert.ok(storeHtml.indexOf('企业管理后台') < storeHtml.indexOf('切换企业账号'));
+assert.match(storeHtml, /id="enterprise-admin-link"[^>]*href="index.html"[^>]*target="_blank"[^>]*hidden/);
 assert.ok(storeHtml.indexOf('切换企业账号') < storeHtml.indexOf('退出登录'));
 assert.match(storeHtml, /id="space-submenu"[^>]*role="menu"/);
 assert.match(storeHtml, /id="space-qingyu"[^>]*>.*青屿科技/);
@@ -41,7 +44,7 @@ function element(value = '') {
 }
 
 {
-  const ids = ['store-overlay','upgrade-trigger','store-close','tab-personal','tab-enterprise','panel-personal','panel-enterprise','personal-buy','store-toast','account-trigger','account-menu','switch-account','space-submenu','space-personal','space-qingyu','menu-guide','menu-manual','menu-support','menu-feedback','menu-settings','menu-language','menu-notifications','menu-logout','account-name','account-plan','menu-account-name','workspace-label','points-balance','upgrade-label','personal-projects','enterprise-projects'];
+  const ids = ['store-overlay','upgrade-trigger','store-close','tab-personal','tab-enterprise','panel-personal','panel-enterprise','personal-buy','store-toast','account-trigger','account-menu','enterprise-admin-link','switch-account','space-submenu','space-personal','space-qingyu','menu-guide','menu-manual','menu-support','menu-feedback','menu-settings','menu-language','menu-notifications','menu-logout','account-name','account-plan','menu-account-name','workspace-label','points-balance','upgrade-label','personal-projects','enterprise-projects'];
   const nodes = Object.fromEntries(ids.map(id => [id, element()]));
   nodes['account-menu'].hidden = true;
   nodes['space-submenu'].hidden = true;
@@ -51,6 +54,7 @@ function element(value = '') {
   vm.createContext(context);
   vm.runInContext(fs.readFileSync(path.join(root, 'agent-store.js'), 'utf8'), context);
   assert.equal(nodes['workspace-label'].textContent, '个人空间');
+  assert.equal(nodes['enterprise-admin-link'].hidden, true);
   nodes['account-trigger'].events.click();
   assert.equal(nodes['account-menu'].hidden, false);
   assert.equal(nodes['account-trigger'].getAttribute('aria-expanded'), 'true');
@@ -59,6 +63,7 @@ function element(value = '') {
   assert.equal(nodes['switch-account'].getAttribute('aria-expanded'), 'true');
   nodes['space-qingyu'].events.click();
   assert.equal(nodes['workspace-label'].textContent, '青屿科技 · 企业空间');
+  assert.equal(nodes['enterprise-admin-link'].hidden, false);
   assert.equal(nodes['space-qingyu'].getAttribute('aria-checked'), 'true');
   assert.equal(nodes['space-submenu'].hidden, true);
   assert.equal(nodes['personal-projects'].hidden, true);
@@ -68,6 +73,7 @@ function element(value = '') {
   nodes['switch-account'].events.click();
   nodes['space-personal'].events.click();
   assert.equal(nodes['workspace-label'].textContent, '个人空间');
+  assert.equal(nodes['enterprise-admin-link'].hidden, true);
   assert.equal(nodes['space-personal'].getAttribute('aria-checked'), 'true');
   assert.equal(storage['carbon-agent-active-space'], 'personal');
   nodes['upgrade-trigger'].events.click();
