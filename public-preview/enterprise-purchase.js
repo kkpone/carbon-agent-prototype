@@ -42,14 +42,10 @@ function showError(message, focusElement) {
 
 document.getElementById('confirm-config').addEventListener('click', () => {
   errorNode.hidden = true;
-  const name = document.getElementById('admin-name');
-  const phone = document.getElementById('admin-phone');
   const company = document.getElementById('company-name');
   const acknowledge = document.getElementById('acknowledge');
   if (!Number.isInteger(Number(seatInput.value)) || Number(seatInput.value) < 1 || Number(seatInput.value) > 10000) return showError('席位数量须为 1 至 10,000 的整数。', seatInput);
   if (!Number.isInteger(Number(monthInput.value)) || Number(monthInput.value) < 1 || Number(monthInput.value) > 36) return showError('购买时长须为 1 至 36 个月的整数。', monthInput);
-  if (!name.value.trim()) return showError('请填写管理员姓名。', name);
-  if (!/^1\d{10}$/.test(phone.value.trim())) return showError('请填写有效的 11 位手机号。', phone);
   if (!company.value.trim()) return showError('请填写企业名称。', company);
   if (!acknowledge.checked) return showError('请先确认演示配置说明。', acknowledge);
   updateSummary();

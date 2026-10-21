@@ -82,7 +82,7 @@ function element(value = '') {
 }
 
 {
-  const ids = ['seat-count','seat-minus','seat-plus','month-count','month-minus','month-plus','summary-seats','summary-months','summary-monthly','summary-total','form-error','confirmation','admin-name','admin-phone','company-name','acknowledge','confirm-config','confirmation-return','management-link'];
+  const ids = ['seat-count','seat-minus','seat-plus','month-count','month-minus','month-plus','summary-seats','summary-months','summary-monthly','summary-total','form-error','confirmation','company-name','acknowledge','confirm-config','confirmation-return','management-link'];
   const nodes = Object.fromEntries(ids.map(id => [id, element()]));
   nodes['seat-count'].value = '1';
   nodes['month-count'].value = '2';
@@ -113,9 +113,7 @@ function element(value = '') {
   assert.equal(nodes['form-error'].textContent, '购买时长须为 1 至 36 个月的整数。');
   nodes['month-count'].value = '3';
   nodes['confirm-config'].events.click();
-  assert.equal(nodes['form-error'].textContent, '请填写管理员姓名。');
-  nodes['admin-name'].value = '张三';
-  nodes['admin-phone'].value = '13800000000';
+  assert.equal(nodes['form-error'].textContent, '请填写企业名称。');
   nodes['company-name'].value = '青屿科技';
   nodes.acknowledge.checked = true;
   nodes['confirm-config'].events.click();
